@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
+    Animator animator;
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
@@ -25,6 +26,7 @@ public class FPSController : MonoBehaviour
     CharacterController characterController;
     void Start()
     {
+        animator = this.GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -39,27 +41,44 @@ public class FPSController : MonoBehaviour
 
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        animator.SetBool("Sprint", isRunning);
+
+        if (Input.GetKey(KeyCode.Mouse0))
+            animator.SetTrigger("LeftPunch");
+
+        if (Input.GetKey(KeyCode.Mouse1))
+            animator.SetTrigger("RightPunch");
+
         float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+        animator.SetFloat("RunningForward", curSpeedX);
 
         #endregion
 
         #region Handles Jumping
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
+            animator.SetTrigger("Jump");
             moveDirection.y = jumpPower;
         }
         else
         {
+            
             moveDirection.y = movementDirectionY;
         }
 
         if (!characterController.isGrounded)
         {
+            animator.SetBool("isGrounded", false);
             moveDirection.y -= gravity * Time.deltaTime;
         }
+        else
+        {
+            animator.SetBool("isGrounded", true);
+        }
+
 
         #endregion
 
