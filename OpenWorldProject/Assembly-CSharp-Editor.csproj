@@ -66,7 +66,7 @@
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Editor\Models\FogModelEditor.cs" />
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs" />
-    <Compile Include="Assets\Imports\Blink\Art\Characters\LowPoly\Editor\MaterialTilingOffset.cs" />
+    <Compile Include="Assets\Imports\MalePlayerModel\Art\Characters\LowPoly\Editor\MaterialTilingOffset.cs" />
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\#NVJOB Water Shaders V2\Editor\NVWaterMaterials.cs" />
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />

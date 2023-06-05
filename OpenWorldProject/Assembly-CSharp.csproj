@@ -109,6 +109,7 @@
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Runtime\Models\BloomModel.cs" />
     <Compile Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
+    <Compile Include="Assets\FPSController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imports\Water\#NVJOB Water Shaders V2\Example Scenes\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
