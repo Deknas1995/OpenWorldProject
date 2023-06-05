@@ -43,11 +43,12 @@ public class FPSController : MonoBehaviour
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         animator.SetBool("Sprint", isRunning);
 
-        if (Input.GetKey(KeyCode.Mouse0))
-            animator.SetTrigger("LeftPunch");
+        bool isLeftPunch = Input.GetKey(KeyCode.Mouse0);
+        animator.SetBool("LeftPunch", isLeftPunch);
 
-        if (Input.GetKey(KeyCode.Mouse1))
-            animator.SetTrigger("RightPunch");
+        bool isRightPunch = Input.GetKey(KeyCode.Mouse1);
+        animator.SetBool("RightPunch", isRightPunch);
+
 
         float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
